@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WMW - World Minimum Wage in 2021</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://rawgit.com/jquery/jquery-mousewheel/master/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+	<style type="text/css">
+		head, html, section, footer{margin:0;
+			/*overflow-y: hidden;*/}
+		div{margin: 0; /*overflow-y: hidden;*/}
+		body{margin:0; overflow-y: hidden;}
+		html{background:#1A1A1A; scroll-behavior: smooth;}
+		a{display:block; width: 6vw; height: 5vh; z-index: 30;}
+		h1{color:#999999;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 1vw;
+			text-align: left;
+			/*line-height: 5vh;*/
+			letter-spacing: -0.05vw;
+			/*margin-top: 4.8vh;*/
+			margin-right: 4vw;
+			margin-bottom: 0.5vw;}
+		h2{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 400;
+			font-size: 3.3vw;
+			text-align: right;
+			line-height: 6vh;
+			letter-spacing: 0vw;
+			/*margin-top: 0.5vh;*/
+			margin-right: 0vw;
+			margin-bottom: 0.5vw;}
+		h3{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 400;
+			font-size: 1.6vw;
+			text-align: left;
+			letter-spacing: -0.1vw;
+			width: 17vw;
+			/*margin-top: 3vh;*/
+			margin-left: 0vw;
+			margin-bottom: 0vw;}
+		h4{color:#11A79B;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 400;
+			font-size: 8vw;
+			text-align: center;
+			letter-spacing: -0.1vw;
+			width: 7.5vw;
+			margin-top: -3vh;
+			margin-left: 0vw;
+			margin-bottom: -1vw;}
+		h5{width: 3vw;}
+		h6{color:#11A79B;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 500;
+			font-size: 4vw;
+			text-align: left;
+			line-height: 8vh;
+			letter-spacing: -0.17vw;
+			/*margin-top: 0.5vh;*/
+			margin-right: 0vw;
+			margin-bottom: 0.5vw;}
+		.Text2{color:#CCCCCC;
+			font-family: 'Noto Sans KR', sans-serif;
+			font-weight: 300;
+			font-size: 0.9vw;
+			text-align: left;
+			width: 25vw;
+			line-height: 3.4vh;
+			word-break: keep-all;
+			margin-right: 0vw;
+			margin-bottom: 0.5vw;}
+		footer{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 0.8vw;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			margin-top: 1vh;}
+
+		.scroll::-webkit-scrollbar{ display: none;}
+
+		#headerseoul{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 10.3vw;
+			margin-left: 2vw;
+			margin-top: 0.5vw;
+			line-height: 10vw;
+			letter-spacing: -0.4vw;
+			text-align: left;
+			/*margin-bottom: 54vw;*/
+			width: 30vw;
+			z-index: 40;
+			 transition: .1s ease; opacity: 1;}
+		#headerseoul:hover{color:#F2F2F2; transition: .1s ease; opacity: 0.5;}
+		#headertokyo{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 10.3vw;
+			margin-left: 2vw;
+			margin-top: 0.5vw;
+			line-height: 10vw;
+			letter-spacing: -0.4vw;
+			text-align: left;
+			/*margin-bottom: 54vw;*/
+			width: 30vw;
+			z-index: 40;
+			 transition: .1s ease; opacity: 1;}
+		#headertokyo:hover{color:#F2F2F2; transition: .1s ease; opacity: 0.5;}
+		#headerwashi{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 10.3vw;
+			margin-left: 2vw;
+			margin-top: 0.5vw;
+			line-height: 10vw;
+			letter-spacing: -0.4vw;
+			text-align: left;
+			/*margin-bottom: 54vw;*/
+			width: 30vw;
+			z-index: 40;
+			 transition: .1s ease; opacity: 1;}
+		#headerwashi:hover{color:#F2F2F2; transition: .1s ease; opacity: 0.5;}
+		#headerpreto{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 10.3vw;
+			margin-left: 2vw;
+			margin-top: 0.5vw;
+			line-height: 10vw;
+			letter-spacing: -0.4vw;
+			text-align: left;
+			/*margin-bottom: 54vw;*/
+			width: 30vw;
+			z-index: 40;
+			 transition: .1s ease; opacity: 1;}
+		#headerpreto:hover{color:#F2F2F2; transition: .1s ease; opacity: 0.5;}
+
+		.subheader{color:#F2F2F2;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 300;
+			font-size: 1vw;
+			line-height: 1vw;
+			text-align: left;
+			top: 2vh; left: 70vw;
+			width: 30vw;
+			z-index: 3;}
+		.logo{top: 3vh; left: 88vw;
+			width: 10vw;
+			z-index: 30;}
+
+		section{}
+		.row{/*width: 1500px; height: 440px;*/
+			margin:auto; margin-right: 0vw; margin-bottom: 0vh;
+			display: flex; align-items: flex-end;}
+		.marginright0{margin-right: 0vw;}
+		.margintop{margin-top: 9.5vh;}
+		.col-3{width: 32.5vw; margin: 0vh 0.5vw;}
+		.gap{margin: 1.4vh 1vw; justify-content: center;}
+
+
+		.absolutegraph{position: absolute;
+						top: 90vh; left: 1vw;
+						bottom: 0vh;
+						z-index: 7;}
+		.boxspace{margin: 0vh 0vw;}
+
+		#seoulImg{width:24vw; position: absolute; top: 12vh; left: 38vw;
+					max-width:100vw; height:auto;
+					transition: .2s ease;
+					filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.6));}
+		#seoulImg:hover{transform: /*translate(30vw)*/ rotate(20deg);
+						transition: .2s ease-in-out;}
+		@keyframes rotate {
+  			from {transform: rotate(20deg);}
+  			to {transform: rotate(380deg);}
+				}
+		@keyframes move {
+ 			from {left: 0vw;}
+  			to {left: 100vw;}
+			}
+		#tokyoImg{width:35vw; position: absolute; top: 15vh; left: 32vw;
+					max-width:100vw; height:auto;
+					transition: .2s ease;
+					filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.6));}
+		#tokyoImg:hover{transform: rotate(10deg);
+						transition: .2s ease;}
+		@keyframes rotate {
+  			from {transform: rotate(20deg);}
+  			to {transform: rotate(380deg);}
+				}
+		#washiImg{width:45vw; position: absolute; top: 20vh; left: 29vw;
+					max-width:100vw; height:auto;
+					transition: .2s ease;
+					filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.6));}
+		#washiImg:hover{transform: rotate(10deg);
+						transition: .2s ease;}
+		@keyframes rotate {
+  			from {transform: rotate(20deg);}
+  			to {transform: rotate(380deg);}
+				}
+		#pretoImg{width:30vw; position: absolute; top: 5vh; left: 35vw;
+					max-width:100vw; height:auto;
+					transition: .2s ease;
+					filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.6));}
+		#pretoImg:hover{transform: rotate(15deg);
+						transition: .2s ease;}
+		@keyframes rotate {
+  			from {transform: rotate(20deg);}
+  			to {transform: rotate(380deg);}
+				}
+
+
+		.flex{display: flex;}
+		.relative{position: relative;}
+		.sticky{position: sticky;}
+		.absolute{position:  absolute;}
+		.fixed{position: fixed;}
+		.z1{z-index: 1;}
+		.z50{z-index: 50;}
+		.z30{z-index: 30;}
+		.z20{z-index: 20;}
+		.outer{padding: 0vh 0vw;}
+		.inner{position: absolute;
+	  		bottom: 0vw; margin: 0vh 0vw; width: 32.5vw;}
+
+	  	.scrollbox{width: 2000vw; height:100vh; display: flex;}
+	  	.seoulbox{width: 100vw; /*position: sticky; left: 0vw;*/}
+	  	.tokyobox{width: 100vw;}
+	  	.washibox{width: 100vw;}
+	  	.pretobox{width: 100vw;}
+
+	  	.tokyotoback{background: #11A79B;}
+	  	.washitoback{background: #11A79B;}
+	  	.back1A{background: #1A1A1A;}
+
+	  	#cursorseoul {width: 20vw; height: 6vh; display: none; z-index: 30;}
+	  	#cursortokyo {width: 20vw; height: 6vh; display: none; z-index: 30;}
+	  	#cursorwashi {width: 20vw; height: 6vh; display: none; z-index: 30;}
+	  	#cursorpreto {width: 20vw; height: 6vh; display: none; z-index: 30;}
+	  	.tokyo-in{margin-left: 2vw;}
+
+	  	#arrowBtn1{position: absolute; width: 5vw; top: 15vh; left: 93vw;}
+	  	#arrowBtn1:hover{opacity: 0.5;}
+	  	#arrowBtn2{position: absolute; width: 5vw; top: 15vh; left: 93vw;}
+	  	#arrowBtn2:hover{opacity: 0.5;}
+	  	#arrowBtn3{position: absolute; width: 5vw; top: 15vh; left: 93vw;}
+	  	#arrowBtn3:hover{opacity: 0.5;}
+	  	#arrowBtn4{position: absolute; width: 5vw; top: 15vh; left: 93vw;}
+	  	#arrowBtn4:hover{opacity: 0.5;}
+
+	  	.boxsticky{position: sticky; left: 0;
+	  				-webkit-position: sticky;}
+	
+	</style>
+</head>
+<body class="scroll">
+	<!--/상단 타이포, 로고-->
+	<section class="fixed" style="z-index: 300">
+			<!--/프로젝트 설명-->
+			<div class="subheader absolute">
+				<p>World Minimum Wage in 2021</p>
+				<p style ="font-family: 'Noto Sans', sans-serif; font-weight: 300;">세계 최저임금 비교</style></p>
+			</div>
+			<!--/로고-->
+			<a href="index.html" class="logo absolute">
+				<img src="logo.svg">
+			</a>
+
+	</section>
+
+	<!--/scroll-->
+	<section class="scrollbox">
+		<!--/seoul-->
+		<section class="seoulbox boxsticky">
+			<!--/seoul-->
+			<section>
+				<div id="headerseoul">SEOUL</div>
+				<!--/팝업창-->
+				<div id="cursorseoul">
+					<img src="seoulexp.svg">
+				</div>
+			</section>
+			<!--/arrow to tokyo-->
+			<section>
+				<div id="arrowBtn1">
+					<img src="arrowtokyo.svg">
+				</div>
+			</section>
+			<!--/scroll 영역 오브젝트-->
+			<!--/Text-->
+				<div id="SeoulText" style="padding-left: 31vw; opacity: 0;">
+					<h6>Minimum Hourly Wage<br>= A Cup of Coffee</h6>
+				</div>
+				<div id="SeoulText2" style="padding-left: 40vw; padding-top: 15vh; opacity: 0;">
+					<p class="Text2">"아메리카노 나오셨습니다." 물건에 존칭을 붙이는 이 잘못된 말은, 한 때 최저시급보다 아메리카노 한 잔이 가격이 더 높아 SNS 상에서 최저시급을 받는 아르바이트생 사이에서 유행하던 말이다. 최저시급 도입 초기부터 유난히 최저시급과 커피 가격을 비교하는 일이 잦았다. 커피값은 한국에서 최저시급에 관한 준거가격을 상징한다. 2021년 현재는 커피 한 잔 값보다 최저시급이 더 높은 8,720원을 기록하고 있다. 2022년 최저시급은 9,160원으로 확정되며 매년 소폭 상승하고 있다.</p>
+				</div> 
+			<section class="row z50">
+				<!--/이미지-->
+				<div id="seoulImg">
+					<img src="seoulimg.png" onmouseover="sound()" onmouseout="mute()" style="width: 100%">
+					<!--/오디오-->
+					<audio id= "seoulSnd" src="seoulSnd.mp3"></audio>
+				</div> 
+			</section>
+			<!--/하단 최저임금 인포-->
+			<section>
+				<section class="row absolutegraph z20">
+					<!--/인상날짜-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace">
+									<h1>Effective Date</h1>
+									<h2>2021.1.1.</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/최저임금-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="boxspace">
+									<h3>Minimum Wage</h3>
+									<div class="row">
+										<h4>₩</h4>
+										<h4 class="count_num"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/인상률-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace">
+									<h5></h5>
+									<h1 class="margintop">Rate of Increase
+										<br>- compared to 2020.1.1.</h1>
+									<h2>1.51% ↑
+										<br>₩440</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</section>
+
+
+		<!--/tokyo-->
+		<section class="tokyobox boxsticky back1A tokyobackground">
+			<!--/tokyo-->
+			<section>
+				<div id="headertokyo">TOKYO</div>
+				<!--/팝업창-->
+				<div id="cursortokyo">
+					<img src="tokyoexp.svg">
+				</div>
+			</section>
+			<!--/arrow to washington-->
+			<section>
+				<div id="arrowBtn2">
+					<img src="arrowtokyo.svg">
+				</div>
+			</section>
+			<!--/scroll 영역 오브젝트-->
+			<section class="row z50">
+				<!--/이미지-->
+				<div id="tokyoImg">
+					<img src="tokyoimg.png" onmouseover="sound()" onmouseout="mute()" style="width: 100%">
+					<!--/오디오-->
+					<audio id= "tokyoSnd" src="tokyoSnd.mp3"></audio>
+				</div> 
+			<!--/하단 최저임금 인포-->
+			<section>
+				<section class="row absolutegraph z20">
+					<!--/인상날짜-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace">
+									<h1>Effective Date</h1>
+									<h2>2021.10.1.</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/최저임금-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="boxspace">
+									<h3>Minimum Wage</h3>
+									<div class="row">
+										<h4>¥</h4>
+										<h4 class="count_num2"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/인상률-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace" id="hreftokyo">
+									<h5></h5>
+									<h1 class="margintop">Rate of Increase
+										<br>- compared to 2020.1.1.</h1>
+									<h2 class="tokyo-in">3.1% ↑
+										<br>¥28</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</section>
+		</section>
+
+		<!--/washington-->
+		<section class="washibox boxsticky back1A">
+			<!--/pretoria-->
+			<section>
+				<div id="headerwashi">WASHINGTON,<br>D.C.</div>
+				<!--/팝업창-->
+				<div id="cursorwashi">
+					<img src="washiexp.svg">
+				</div>
+			</section>
+			<!--/arrow to pretoria-->
+			<section>
+				<div id="arrowBtn3">
+					<img src="arrowpreto.svg">
+				</div>
+			</section>
+			<!--/scroll 영역 오브젝트-->
+			<section class="row z50">
+				<!--/이미지-->
+				<div id="washiImg">
+					<img src="washiimg.png" onmouseover="sound()" onmouseout="mute()" style="width: 100%">
+					<!--/오디오-->
+					<audio id= "washiSnd" src="washiSnd.mp3"></audio>
+				</div> 
+			<!--/하단 최저임금 인포-->
+			<section>
+				<section class="row absolutegraph z20">
+					<!--/인상날짜-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace">
+									<h1>Effective Date</h1>
+									<h2>2022.3.30.</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/최저임금-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="boxspace" style="margin-left: 7vw">
+									<h3>Minimum Wage</h3>
+									<div class="row">
+										<h4 style="color: #F59D33">$</h4>
+										<h4 class="count_num3" style="color: #F59D33"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/인상률-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace" id="hrefwashi">
+									<h5></h5>
+									<h1 class="margintop">Rate of Increase
+										<br>- compared to 2020.1.1.</h1>
+									<h2>37% ↑
+										<br>$4.05</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</section>
+	</section>
+
+		<!--/pretoria-->
+		<section class="pretobox boxsticky back1A">
+			<!--/pretoria-->
+			<section>
+				<div id="headerpreto">PRETORIA</div>
+				<!--/팝업창-->
+				<div id="cursorpreto">
+					<img src="pretoexp.svg">
+				</div>
+			</section>
+			<!--/arrow to berlin-->
+			<section>
+				<div id="arrowBtn4">
+					<img src="arrowberlin.svg">
+				</div>
+			</section>
+			<!--/scroll 영역 오브젝트-->
+			<section class="row z50">
+				<!--/이미지-->
+				<div id="pretoImg">
+					<img src="pretoimg.png" onmouseover="sound()" onmouseout="mute()" style="width: 100%">
+					<!--/오디오-->
+					<audio id= "pretoSnd" src="pretoSnd.mp3"></audio>
+				</div> 
+			<!--/하단 최저임금 인포-->
+			<section>
+				<section class="row absolutegraph z20">
+					<!--/인상날짜-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace">
+									<h1>Effective Date</h1>
+									<h2>2021.1.1.</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/최저임금-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="boxspace">
+									<h3>Minimum Wage</h3>
+									<div class="row">
+										<h4 style="color: #7DC04F">R</h4>
+										<h4 class="count_num4" style="color: #7DC04F"></h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/인상률-->
+					<div class="col-3 outer">
+						<div class="inner">
+							<div class="gap">
+								<div class="row boxspace" id="hrefpreto">
+									<h5></h5>
+									<h1 class="margintop">Rate of Increase
+										<br>- compared to 2020.1.1.</h1>
+									<h2>4.48% ↑
+										<br>R0.93</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</section>
+
+
+		
+
+
+	</section>
+	<script type="text/javascript">
+		//헤더 따라다니기
+		$("#headerseoul").on({
+            mousemove: (e) => {
+                $("#cursorseoul").css({
+                      top: e.pageY+10 + "px",
+                    left: e.pageX+10 + "px",
+                    position:"absolute"
+                })
+            },
+            mouseover: (e) => {
+                $("#cursorseoul").show();
+            },
+            mouseout: (e) => {
+                $("#cursorseoul").hide();
+            }
+        });
+
+        $("#headertokyo").on({
+            mousemove: (e) => {
+                $("#cursortokyo").css({
+                      top: e.pageY+10 + "px",
+                    left: e.pageX+10 + "px",
+                    position:"absolute"
+                })
+            },
+            mouseover: (e) => {
+                $("#cursortokyo").show();
+            },
+            mouseout: (e) => {
+                $("#cursortokyo").hide();
+            }
+        });
+
+
+
+		//오브젝트 소리
+		//SEOUL 커피잔
+		//seoulSnd.volume = 0.05;
+		//seoulSnd.currentTime = 0;
+
+       //function sound(){document.getElementById("seoulSnd").play();}
+       //function mute(){document.getElementById("seoulSnd").pause();}
+
+       //TOKYO 도시락 뚜겅
+		//seoulSnd.volume = 0.05;
+		//seoulSnd.currentTime = 0;
+
+       //function sound(){document.getElementById("tokyoSnd").play();}
+       //function mute(){document.getElementById("tokyoSnd").pause();}
+
+
+
+
+
+       //숫자 애니메이션
+       //SEOUL
+       $({ val : 0 }).animate({ val : 8720 }, {
+ 		 duration: 1000,
+ 		step: function() {
+    		var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num").text(num);},
+  		complete: function() {
+   			var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num").text(num);}
+		});
+
+       	function numberWithCommas(x) {
+   			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}
+
+   		//TOKYO
+   		$({ val : 0 }).animate({ val : 1041 }, {
+ 		 duration: 1000,
+ 		step: function() {
+    		var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num2").text(num);},
+  		complete: function() {
+   			var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num2").text(num);}
+		});
+
+       	function numberWithCommas(x) {
+   			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}
+
+   		//WASHINGTON
+   		$({ val : 0 }).animate({ val : 15 }, {
+ 		 duration: 1000,
+ 		step: function() {
+    		var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num3").text(num);},
+  		complete: function() {
+   			var num = numberWithCommas(Math.floor(this.val));
+    		$(".count_num3").text(num);}
+		});
+
+       	function numberWithCommas(x) {
+   			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}
+
+   		//PRETORIA
+   		$({ val : 0 }).animate({ val : 21.69 }, {
+ 		 duration: 1000,
+ 		step: function() {
+    		var num = numberWithCommas(this.val.toFixed(2));
+    		$(".count_num4").text(num);},
+  		complete: function() {
+   			var num = numberWithCommas(this.val.toFixed(2));
+    		$(".count_num4").text(num);}
+		});
+
+		/*$({ val : 0 }).animate({ val : 1.5 }, {
+ 		  duration: 1000,
+  		step: function() {
+    		var num = numberWithCommas(this.val.toFixed(1));
+    		$(".count_num2").text(num);},
+  		complete: function() {
+		    var num = numberWithCommas(this.val.toFixed(1));
+		    $(".count_num2").text(num);}
+		});
+
+		function numberWithCommas(x) {
+		    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}*/
+
+       //마우스 휠-스크롤
+       //1번
+		/*scrollVert();
+		var scrollLeft=0;
+
+		function scrollVert() {
+		  $('html, body, section, *').off('mousewheel').mousewheel(function(e, delta) {
+		    this.scrollTop -= (delta * 40);
+		    e.preventDefault();
+		    setTimeout(function() {
+		      if ($(window).scrollTop() + $(window).height() == $(document).height())
+		        scrollHoriz();}, 0)});
+			}
+
+		function scrollHoriz() {
+		  $('html, body, section, *').off('mousewheel').mousewheel(function(e, delta) {
+		    this.scrollLeft -= (delta * 40);
+		    e.preventDefault();
+		    scrollLeft=this.scrollLeft
+		    setTimeout(function() {
+		      if (scrollLeft == 0) scrollVert();
+		    }, 0)
+		  });
+		}*/
+
+		//2번
+		/*$("#id").on('mousewheel',function(e){
+			var wheelDelta = e.originalEvent.wheelDelta;
+
+			if(wheelDelta > 0){
+				console.log("up");
+				$(this).scrollLeft(-wheelDelta + $(this).scrollLeft());
+			}else{
+			console.log("down");
+				$(this).scrollLeft(-wheelDelta + $(this).scrollLeft());}
+			});*/
+
+		//3번
+		$.fn.hasScrollBar = function() {
+	    return (this.prop("scrollWidth") == 0 && this.prop("clientWidth") == 0)
+	            || (this.prop("scrollWidth") > this.prop("clientWidth"));};
+	            // 좌우 스크롤이 있는지 없는지 여부 검사
+		function wheel(name){
+			$(name).on('mousewheel',function(e){
+	    	var hasScroll = $(this).hasScrollBar();
+	    	if(!hasScroll){ //스크롤이 없으면 그냥 일반 스크롤
+	    	}else{ //있으면 아래 스크롤 받는값을 없애고 좌우스크롤
+	        	e.preventDefault(); 
+	        	var wheelDelta = e.originalEvent.wheelDelta;
+	        	if(wheelDelta > 0){
+	            	$(this).scrollLeft(-wheelDelta + $(this).scrollLeft());
+	        	}else{
+	            	$(this).scrollLeft(-wheelDelta + $(this).scrollLeft());}
+	    		}
+			});
+		}
+		$(function(){
+	    	wheel('html');});
+
+
+		//arrow로 스크롤 위치 이동
+		//to tokyo
+		$(document).ready(function(){
+		$('#arrowBtn1').click(function(){
+			var offset = $('.tokyobox').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+	        $('html').animate({scrollLeft : offset.left}, 300);});
+		});
+
+		//to washington
+		$(document).ready(function(){
+		$('#arrowBtn2').click(function(){
+			var offset = $('.washibox').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+	        $('html').animate({scrollLeft : offset.left}, 300);});
+		});
+
+		//to pretoria
+		$(document).ready(function(){
+		$('#arrowBtn3').click(function(){
+			var offset = $('.pretobox').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+	        $('html').animate({scrollLeft : offset.left}, 300);});
+		});
+
+		//to berlin
+		$(document).ready(function(){
+		$('#arrowBtn4').click(function(){
+			var offset = $('.berlinbox').offset(); //선택한 태그의 위치를 반환
+
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+	        $('html').animate({scrollLeft : offset.left}, 300);});
+		});
+
+		$(window).on('mousewheel', function(e){ if(e.originalEvent.wheelDelta < 0) {
+			//scroll down
+			$('html, body').stop().animate({ scrollLeft : '+=505vw' },20);
+			}else {
+			//scroll up
+			$('html, body').stop().animate({ scrollLeft : '-=505vw' },20); }
+			//prevent page fom scrolling
+			return false; });
+
+		//스크롤에 따라 배경색
+		$(document).ready(function(){
+		$(window).scrollLeft(0);
+		$(window).scroll(function(){	
+		if( $(window).scrollLeft()>=700 ){
+					$("body").addClass("tokyotoback");
+				}
+				else {
+					$("body").removeClass("tokyotoback");
+				}
+		if( $(window).scrollLeft()>=2000 ){
+					$("body").addClass("washitoback");
+				}
+				else {
+					$("body").removeClass("washitoback");
+				}
+			});
+		});
+
+		//Seoul Text
+		$("#seoulImg").on({
+            mouseover: (e) => {
+                $("#SeoulText").show();
+                $("#SeoulText").css({
+                      opacity: 1,
+                      position:"absolute",
+                      transform: "translate(-27vw)",
+                      transition: "0.7s ease-in-out"
+                  })
+            	},
+            mouseout: (e) => {
+                $("#SeoulText").hide();
+                $("#SeoulText").css({
+                      opacity: 0,
+                      position:"absolute"
+                  })
+            	}
+        });
+
+        $("#seoulImg").on({
+            mouseover: (e) => {
+                $("#SeoulText2").show();
+                $("#SeoulText2").css({
+                      opacity: 1,
+                      position:"absolute",
+                      transform: "translate(25vw)",
+                      transition: "0.7s ease-in-out"
+                  })
+            	},
+            mouseout: (e) => {
+                $("#SeoulText2").hide();
+                $("#SeoulText2").css({
+                      opacity: 0,
+                      position:"absolute"
+                  })
+            	}
+        });
+
+	</script>
+</body>
+</html>
